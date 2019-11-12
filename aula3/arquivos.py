@@ -6,7 +6,8 @@ def ex_01():
     ip_invalidos=[]
     ip_validos=[]
     for ip in ips:
-        
+        ip_linha = ip.split()
+        ip_campo = ip_linha.split('.')
 
 
 
