@@ -9,10 +9,15 @@ def ex_01():
         ip_linha = ip.split()
         for ip_campo in ip_linha:
             ip_numero = ip_campo.split('.')
+            for i in ip_numero:
+                i = int(i)
+                if(i >255):
+                    ip_invalidos.append(ip_numero)
 #            ip_numero = [int(i) for i in ip_numero]
            
     
-
+    for j in ip_invalidos:
+        print(j)
 
 
 
