@@ -71,4 +71,4 @@ def ex_10():
 
     print("Valor de Salario Liquido do mes {}".format(salario_liq))
 
-ex_10()
+
