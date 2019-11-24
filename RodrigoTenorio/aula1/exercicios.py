@@ -72,3 +72,13 @@ def ex_10():
     print("Valor de Salario Liquido do mes {}".format(salario_liq))
 
 
+def run():
+    ex_01()
+    ex_02()
+    ex_03()
+    ex_05()
+    ex_06()
+    ex_07()
+    ex_08()
+    ex_09()
+    ex_10()

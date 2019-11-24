@@ -2,26 +2,44 @@
 
 def ex_01():
     ips = open("ip.txt","r")
-
     ip_invalidos=[]
     ip_validos=[]
     for ip in ips:
-        ip_linha = ip.split()
-        for ip_campo in ip_linha:
-            ip_numero = ip_campo.split('.')
-            for i in ip_numero:
-                i = int(i)
-                if(i >255):
-                    ip_invalidos.append(ip_numero)
-#            ip_numero = [int(i) for i in ip_numero]
-           
-    
-    for j in ip_invalidos:
-        print(j)
+        numero=ip.split('.')
+        if( int(numero[0]) <= 255 and int(numero[1]) <= 255 and int(numero[2]) <= 255 and int(numero[3]) <= 255):
+            ip_validos.append(ip)
+        else:
+            ip_invalidos.append(ip)
+
+    arq = open("lista_ip.txt","w")
+    texto ="[Endereços válidos:]"+"\n"
+    arq.write(texto)
+    for ip_ in ip_validos:
+        arq.write(ip_)
+    texto ="\n"+"\n"+"[Endereços inválidos:]"+"\n"
+    arq.write(texto)
+    for ip_ in ip_invalidos:
+        arq.write(ip_)
+
+    ips.close()
+    arq.close()
+
+def ex_02():
+    relatrio =open("usuario.txt","r")
+    usuario = []
+    espaco  = []
+    for palavra in relatrio:
+        palavra= palavra.split()
+        usuario.append(palavra[0])
+        espaco.append(int(palavra[1]))
+    relatrio.close()
+
+
+def converter_byte_mega(num_bute):
+    num_mega = num_bute / 1024
+    print(num_mega)
 
 
 
 
-    ips.close
-
-ex_01()
+converter_byte_mega(1024)
