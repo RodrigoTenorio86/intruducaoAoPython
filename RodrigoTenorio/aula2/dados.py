@@ -139,8 +139,7 @@ def ex_12():
     print(vetor_misto)
     
         
-def ex_13():
-    numero = int(input("Digite um Numero de 0 ate 99: "))
+
     
 ex_12()    
 

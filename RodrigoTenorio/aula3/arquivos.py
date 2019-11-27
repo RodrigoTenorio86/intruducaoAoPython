@@ -31,15 +31,20 @@ def ex_02():
     for palavra in relatrio:
         palavra= palavra.split()
         usuario.append(palavra[0])
-        espaco.append(int(palavra[1]))
+        espaco.append(converter_byte_mega( int(palavra[1])))
     relatrio.close()
+    print(espaco)
 
 
 def converter_byte_mega(num_bute):
-    num_mega = num_bute / 1024
-    print(num_mega)
+    num_mega = ( num_bute / 1024)/1024
+    return  round(num_mega,2)
+
+def somar_total_ocupado(espaco_ocupado):
+    
 
 
 
 
-converter_byte_mega(1024)
+
+ex_02()
