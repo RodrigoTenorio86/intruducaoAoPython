@@ -67,6 +67,9 @@ def ex_46():
             temperaturas.append(float(temperatura))
         else:
             condicao =False
+    print("Temperatura Minima e {}C".format(min(temperaturas)))
+    print("Temperatura Maximo e {}C".format(max(temperaturas)))
+    print("Temperatura Media: {}C".format(sum(temperaturas)/len(temperaturas)))
     print(temperaturas)
             
 
