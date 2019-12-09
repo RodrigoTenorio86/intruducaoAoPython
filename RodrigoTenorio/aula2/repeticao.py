@@ -73,4 +73,22 @@ def ex_46():
     print(temperaturas)
             
 
-ex_46()
+def ex_47():
+    num = int(input("Digite um numero inteiro positivo: "))
+    primo="Primo"
+    if(num <= 1):
+        primo="Não é um número Primo."
+    for i in range(2,num):
+        if (num%i== 0 and i != 1):
+            primo="Não é um número Primo."
+    print(primo)
+
+def ex_48():
+    num = int(input("Digite um Numero Inteiro Posistivo para gera uma lista dos Numeros primos: "))
+    for i in range(1, num):
+        for j in range(2,i):
+            if(i%j==0 and i != 1):
+                print(i)
+
+
+ex_48()

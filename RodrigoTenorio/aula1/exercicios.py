@@ -12,7 +12,7 @@ def ex_02():
     print("Area do Circulo {}".format(area_circulo))
 
 def ex_03():
-    lado = float(input("Digite valor do lado do Quadrado? "))
+    lado = float(input("Digite valor de um dos lados do Quadrado? "))
     area_quadrado = lado * lado 
     print("Area do Quadrado {} e seu valor em dobro e {}".format(area_quadrado,area_quadrado*area_quadrado))
 

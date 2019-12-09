@@ -1,4 +1,4 @@
-
+#Autor: RodrigoTenorio
 
 def ex_01():
     ips = open("ip.txt","r")
@@ -33,18 +33,29 @@ def ex_02():
         usuario.append(palavra[0])
         espaco.append(converter_byte_mega( int(palavra[1])))
     relatrio.close()
-    print(espaco)
 
+    for i in range(0,len(usuario) ):
+        escrever_arq(str(i+1))
+        escrever_arq("  "+usuario[i])
+ 
 
 def converter_byte_mega(num_bute):
     num_mega = ( num_bute / 1024)/1024
     return  round(num_mega,2)
 
-def somar_total_ocupado(espaco_ocupado):
+def porcento_do_uso(total,uso):
+    valor = (uso * 100)/total
+    return round(valor,2)
+
+def escrever_arq(body):
+    arq=open("relatorio.txt","w")
+    cabecalho = "ACME Inc.                 Uso do espaço em disco pelos usuários    "+"\n"
+    linhas="------------------------------------------------------------------------"+"\n"+"\n"
+    enunciado="Nr. Usuário                       Espaço utilizado           % do uso"+"\n"
+    arq.write(cabecalho)
+    arq.write(linhas)
+    arq.write(enunciado)
+    arq.write(body)
     
-
-
-
-
 
 ex_02()
