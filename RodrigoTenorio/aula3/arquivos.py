@@ -26,17 +26,32 @@ def ex_01():
 
 def ex_02():
     relatrio =open("usuario.txt","r")
-    usuario = []
+    usuarios = []
     espaco  = []
     for palavra in relatrio:
         palavra= palavra.split()
-        usuario.append(palavra[0])
+        usuarios.append(palavra[0])
         espaco.append(converter_byte_mega( int(palavra[1])))
     relatrio.close()
 
-    for i in range(0,len(usuario) ):
-        escrever_arq(str(i+1))
-        escrever_arq("  "+usuario[i])
+
+    arq=open("relatorio.txt","w")
+    cabecalho = "ACME Inc.                 Uso do espaço em disco pelos usuários    "+"\n"
+    linhas="------------------------------------------------------------------------"+"\n"
+    enunciado="Nr. Usuário                       Espaço utilizado           % do uso"+"\n"+"\n"
+    arq.write(cabecalho)
+    arq.write(linhas)
+    arq.write(enunciado)
+    con = 0
+    while con < len(usuarios):
+        arq.write("{}  {}                     {} MB        {}% \n".format(con+1, usuarios[con], espaco[con], porcento_do_uso(sum(espaco), espaco[con]) ) )
+        con +=1
+    arq.write("\n")    
+    arq.write("Espaço total ocupado: {} MB\n".format(sum(espaco)))
+    arq.write("Espaço médio ocupado: {} MB".format( round(sum(espaco)/len(espaco),2 )))
+
+    arq.close()
+
  
 
 def converter_byte_mega(num_bute):
@@ -47,15 +62,10 @@ def porcento_do_uso(total,uso):
     valor = (uso * 100)/total
     return round(valor,2)
 
-def escrever_arq(body):
-    arq=open("relatorio.txt","w")
-    cabecalho = "ACME Inc.                 Uso do espaço em disco pelos usuários    "+"\n"
-    linhas="------------------------------------------------------------------------"+"\n"+"\n"
-    enunciado="Nr. Usuário                       Espaço utilizado           % do uso"+"\n"
-    arq.write(cabecalho)
-    arq.write(linhas)
-    arq.write(enunciado)
-    arq.write(body)
+
+
     
 
-ex_02()
+def run():
+    ex_01()
+    ex_02()
