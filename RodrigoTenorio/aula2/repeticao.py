@@ -85,15 +85,27 @@ def ex_47():
 
 def ex_48():
     num = int(input("Digite um Numero Inteiro Posistivo para gera uma lista dos Numeros primos: "))
-
     lista = []
-
-    for i in range(num + 1):
-        if i % 2 == 1 and i != 2:
-            lista.append(i)
+    for i in range(1,num + 1):
+        j = 2
+        while  i >= j:
+            if(  i % j == 0 and i != 1):
+                if(i==j):
+                    lista.append(i)
+                break
+            j += 1
 
     print("Números primos: ", lista)
                 
 
-
-ex_48()
+def run():
+    ex_29()
+    ex_39()
+    ex_40()
+    ex_41()
+    ex_42()
+    ex_44()
+    ex_45()
+    ex_46()
+    ex_47()
+    ex_48()
